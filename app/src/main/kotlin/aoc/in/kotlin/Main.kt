@@ -6,6 +6,8 @@ package aoc.`in`.kotlin
 import aoc.`in`.kotlin.utils.readInput
 
 fun main() {
-    println(dayOnePartOne(readInput("Day01")).toString())
-    println(dayOnePartTwo(readInput("Day01")).toString())
+    //println(dayOnePartOne(readInput("Day01")).toString())
+    //println(dayOnePartTwo(readInput("Day01")).toString())
+    //println(dayTwoPartOne(readInput("Day02")).toString())
+    println(dayTwoPartTwo(readInput("Day02")).toString())
 }
