@@ -90,3 +90,60 @@ fun levelsCheck(level: List<Int>,PDampener: Boolean, operator: (Int, Int) -> Boo
     }  else false
 }
  */
+
+fun levelsChecker2(report: List<Int>) {
+    val levelDif = mutableListOf<Int>()
+    report.forEachIndexed { index, level ->
+        if(index != report.lastIndex ) {
+            levelDif.add(level - report[index +1] )
+        }
+    }
+
+    //val whichOrder = levelDif.reduce { acc, dif -> if (dif > 0) acc + 1 else acc }
+    var whichOrder = 0
+    levelDif.forEach { dif ->
+        if (dif > 0) whichOrder += 1
+    }
+
+    println("which order is it? $whichOrder")
+    println("what's my level dif $levelDif")
+
+    if(whichOrder > 1) {
+        println("desing")
+        //des
+        val levelDif2 = mutableListOf<Int>()
+        //val retest = report.drop(report[levelDif.indexOfFirst { level ->  0 < level} + 1])
+        val retest = report.toMutableList()
+        val test2 = levelDif.indexOfFirst { level -> 0 > level}
+        retest.removeAt(test2 + 1)
+
+        println("the old list" + report)
+        println("the new list" + retest)
+
+        retest.forEachIndexed { index, level ->
+            levelDif2.add(level - report[index +1] )
+        }
+        println(levelDif2)
+
+    } else if (whichOrder == 1) {
+        //ass
+        println("assing")
+        val levelDif2 = mutableListOf<Int>()
+        val retest = report.toMutableList()
+        println("we are removing "+ levelDif.indexOfFirst { level -> 0 < level} + " the index")
+        val test2 = levelDif.indexOfFirst { level -> 0 < level}
+        //val test = report[-1]
+        //println("our index we are removing" + test)
+        retest.removeAt(test2 + 1)
+
+        println(retest)
+
+        retest.forEachIndexed { index, level ->
+            levelDif2.add(level - report[index +1] )
+        }
+        println("the old list" + report)
+        println("the new list" + retest)
+        println(levelDif2)
+    } else println("oh no")
+
+}

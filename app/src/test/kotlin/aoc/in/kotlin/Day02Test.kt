@@ -39,4 +39,10 @@ class Day02Test {
         val report = dayTwoPartTwo(listOf("3 1 2 4 5"))
         assertEquals(1 ,report, "should be good")
     }
+    @Test fun`ross fun time`() {
+        levelsChecker2(listOf(1,2,4,5,3))
+    }
+    @Test fun`ross fun time2`() {
+        levelsChecker2(listOf(4,6, 3,2,1))
+    }
 }
