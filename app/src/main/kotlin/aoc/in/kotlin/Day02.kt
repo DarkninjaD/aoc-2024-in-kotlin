@@ -1,7 +1,12 @@
 package aoc.`in`.kotlin
 
-import java.lang.Exception
+import java.io.File
 
+val FailedReportList =  mutableListOf<String>()
+const val FailedReportName = "./Failed_List.csv"
+
+val SingleFailedReportList = mutableListOf<String>()
+const val SFRL = "./Single_Fail.csv"
 fun dayTwoPartOne(input : List<String>) : Int {
     var totalSafe = 0
     input.forEach { report ->
@@ -35,6 +40,8 @@ fun dayTwoPartTwo(input : List<String>): Int {
         val levels = report.split(" ").map { it.toInt() }
         if(levelsChecker2(levels)) totalSafe++
     }
+    val file = File(FailedReportName)
+    FailedReportList.forEach {file.appendText("$it,\n")}
     return totalSafe
 }
 
@@ -133,6 +140,7 @@ fun levelsChecker2(report: List<Int>): Boolean {
         println(levelDif2)
         val isSafe = levelDif2.all { diff -> diff in 1..3 }
         println("is the report safe? $isSafe")
+        if (!isSafe) FailedReportList.add("$report")
         return isSafe
     // if equal to one it's Ascending, with one Descending error
     } else {
@@ -173,6 +181,7 @@ fun levelsChecker2(report: List<Int>): Boolean {
         val isSafe = levelDif2.all { diff -> diff in -3..-1 }
         println(levelDif2)
         println("is the report safe? $isSafe")
+        if (!isSafe) FailedReportList.add("$report")
         return  isSafe
     }
 }
