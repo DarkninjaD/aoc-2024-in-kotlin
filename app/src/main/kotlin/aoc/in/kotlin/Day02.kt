@@ -3,7 +3,11 @@ package aoc.`in`.kotlin
 import java.io.File
 
 val FailedReportList =  mutableListOf<String>()
-const val FailedReportName = "./Failed_List.csv"
+val FailedSingleError =  mutableListOf<String>()
+val FailedSecondError =  mutableListOf<String>()
+val FailedMoreError =  mutableListOf<String>()
+
+const val FailedReportName = "./Failed_List_Detailed.csv"
 
 val SingleFailedReportList = mutableListOf<String>()
 const val SFRL = "./Single_Fail.csv"
@@ -41,6 +45,9 @@ fun dayTwoPartTwo(input : List<String>): Int {
         if(levelsChecker2(levels)) totalSafe++
     }
     val file = File(FailedReportName)
+    file.appendText("Total Failed, Total w/ 1 Error, Total w/ 2 Error, Failed w/ 3 or more, Failed w/ 0 Index Error")
+
+    file.appendText("OG Report, Failed w/ 1 Error, Failed w/ 2 Error, Failed w/ 3 or more, Has a 0 Index Error")
     FailedReportList.forEach {file.appendText("$it,\n")}
     return totalSafe
 }

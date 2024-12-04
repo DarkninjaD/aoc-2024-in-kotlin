@@ -93,4 +93,8 @@ class Day02Test {
         val isSafe = levelsChecker2(listOf(4,3,2,1,-10))
         assertEquals(true, isSafe, "Descending list is not managing ending Descending error")
     }
+    @Test fun`testing thing`() {
+        val isSafe = levelsChecker2(listOf(7,8,6,5,4))
+        assertEquals(true, isSafe, "Descending list is not managing ending Descending error")
+    }
 }
