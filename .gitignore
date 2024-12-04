@@ -10,3 +10,5 @@ build
 
 # Ignoring inputs per Eric Wastl request.
 app/src/main/inputs
+# Ignoring Local settup
+local.properties
