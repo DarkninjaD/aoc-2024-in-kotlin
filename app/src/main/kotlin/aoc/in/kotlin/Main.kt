@@ -9,5 +9,23 @@ fun main() {
     //println(dayOnePartOne(readInput("Day01")).toString())
     //println(dayOnePartTwo(readInput("Day01")).toString())
     //println(dayTwoPartOne(readInput("Day02")).toString())
-    println(dayTwoPartTwo(readInput("Day02")).toString())
+    //println(dayTwoPartTwo(readInput("Day02")).toString())
+    //val (pagePrintOrder, pageOrderRule)= dayFiveSetup(readInput("Day05"))
+    //println(dayFivePartOne(pagePrintOrder, pageOrderRule).toString())
+    //println(dayFivePartTwo(pagePrintOrder, pageOrderRule).toString())
+}
+fun dayFiveSetup (input: List<String>): Pair<MutableList<List<Int>>,MutableList<List<Int>>> {
+    val rule = mutableListOf<List<Int>>()
+    val rows = mutableListOf<List<Int>>()
+    input.forEach { line ->
+        if (line.contains("|")) {
+            val test = line.split("|").map { it.toInt() }
+            rule.add(test)
+        }
+        if (line.contains(",")) {
+            val test = line.split(",").map { it.toInt() }
+            rows.add(test)
+        }
+    }
+    return Pair(rule, rows)
 }
