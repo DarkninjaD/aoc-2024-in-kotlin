@@ -10,12 +10,13 @@ fun main() {
     //println(dayOnePartTwo(readInput("Day01")).toString())
     //println(dayTwoPartOne(readInput("Day02")).toString())
     //println(dayTwoPartTwo(readInput("Day02")).toString())
-    //val (pagePrintOrder, pageOrderRule)= dayFiveSetup(readInput("Day05"))
-    //println(dayFivePartOne(pagePrintOrder, pageOrderRule).toString())
-    //println(dayFivePartTwo(pagePrintOrder, pageOrderRule).toString())
     //println(day03PartOne(readInput("Day03")).toString())
     //println(day03PartTwo(readInput("Day03")).toString())
     //println(day04PartOne(readInput("Day04")).toString())
+    //val (pagePrintOrder, pageOrderRule)= dayFiveSetup(readInput("Day05"))
+    //println(dayFivePartOne(pagePrintOrder, pageOrderRule).toString())
+    //println(dayFivePartTwo(pagePrintOrder, pageOrderRule).toString())
+    println(day06PartOne(readInput("Day06_test")).toString())
 }
 fun dayFiveSetup (input: List<String>): Pair<MutableList<List<Int>>,MutableList<List<Int>>> {
     val rule = mutableListOf<List<Int>>()

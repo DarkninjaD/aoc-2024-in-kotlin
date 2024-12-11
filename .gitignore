@@ -12,3 +12,5 @@ build
 app/src/main/inputs
 # Ignoring Local settup
 local.properties
+
+**/*.csv
