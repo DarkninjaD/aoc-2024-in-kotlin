@@ -3,6 +3,7 @@
  */
 package aoc.`in`.kotlin
 
+import Day07PartOne
 import aoc.`in`.kotlin.utils.readInput
 
 fun main() {
@@ -16,7 +17,8 @@ fun main() {
     //val (pagePrintOrder, pageOrderRule)= dayFiveSetup(readInput("Day05"))
     //println(dayFivePartOne(pagePrintOrder, pageOrderRule).toString())
     //println(dayFivePartTwo(pagePrintOrder, pageOrderRule).toString())
-    println(day06PartOne(readInput("Day06_test")).toString())
+    //println(day06PartOne(readInput("Day06_test")).toString())
+    println(Day07PartOne(readInput("Day07_test"))).toString()
 }
 fun dayFiveSetup (input: List<String>): Pair<MutableList<List<Int>>,MutableList<List<Int>>> {
     val rule = mutableListOf<List<Int>>()
